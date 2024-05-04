@@ -27,7 +27,6 @@ body {
     margin-top: 5%;
     margin-bottom: 5%;
     border: 0.1px solid hsl(0, 0%, 100%);
-    background-color: #ffffff;
     box-shadow: 0 0 0 1px #727272;
     padding-left:100px;
     padding-right:100px;
@@ -43,4 +42,11 @@ li {
     align-self: center;
     padding-left: 38%;
     margin-top:20px;
-};
+}
+body.dark {
+    background-color: #333;
+    color: white;
+}
+.dark .subtext {
+    color: #4F9ACF;
+}
