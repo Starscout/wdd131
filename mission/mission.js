@@ -10,4 +10,4 @@ function changeTheme() {
         image.src = 'byui-logo_blue.webp';
 }
 };
-themeSelector.addEventListener('click', changeTheme);
+themeSelector.addEventListener('change', changeTheme);
