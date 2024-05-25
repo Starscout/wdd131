@@ -13,7 +13,6 @@
     --Headline-font: Lora, Impact, serif
 }
 header {
-    font-family: ;
     text-align: center;
     
 }
@@ -47,4 +46,19 @@ body {
 }
 #title {
     color: var(--Red-color);
+}
+.skiptocontent a {
+	/* set the element to absolute positioning */
+    position: absolute;
+	/* move it off screen */
+    top: -40px    ;
+	/* Make sure it will be on the left edge of the screen */
+    align-self:auto;
+	/* Change the background and color to something that stands out */
+    background-color: var(--Red-color);
+    color:white;
+}
+.skiptocontent a:focus {
+    left: 0px;
+    top: 0px;
 }
