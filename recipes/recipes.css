@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=Salsa&display=swap');
+
+
+img {
+    max-width: 100%S;
+}
+
+header {
+    margin: 50px;
+    display: flex;
+    font-family: "Salsa", cursive;
+    font-weight: 300;
+    font-style: normal;
+    justify-content: center;
+    align-items: center;
+    font-size: 5vw;
+    margin-bottom: 0px;
+}
+
+header img {
+    width: 15vw;
+    height: 15vw;
+}
+
+#search {
+    display: flex;
+
+    height: 10px;
+    border-radius:5px;
+    padding: 7.5vw;
+    align-items:center;
+    justify-items:center;
+    border-bottom: 1px solid;
+}
+
+#search input {
+    width: 80vw;
+    height: 5vw;
+    border-radius:5px;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    border-right: 0;
+    font-size: 5vw;
+}
+#search img {
+    width: 5%;
+    padding: .5vw;
+    border: 1px solid;
+    border-radius: 5px;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+.recipe{
+    border: 1px solid;
+    margin: 3vw;
+    border-radius:5px;
+    padding:25px;
+    font-size: large;
+}
+
+.recipe img {
+    margin:3%;
+    width: 80vw;
+    height: 65vw;
+}
+
+.recipe p{
+    padding:5px;
+}
+
+.tags {
+    display: flex;
+}
+
+.tags p {
+    border: 1px solid;
+    margin: 5px;
+    padding: 5px;
+}
+
+.description {
+    display: none;
+}
+
+.social {
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    gap: 1rem;
+}
+  
+.social a {
+    display: inline-flex;
+    align-items: center;
+}
+  
+.social img {
+    width: 15vw; 
+    height: 15vw;
+}
+
+
+@media screen and (min-width: 600px) {
+    .recipe {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    .recipe img {
+        margin:3%;
+        width: 40vw;
+        height: 25vw;
+    }
+    .tags {
+        width: max-content;
+        height:50px;
+    }
+}
