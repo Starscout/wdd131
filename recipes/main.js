@@ -7,7 +7,7 @@ const recipes = [
 		datePublished: '2016-10-16',
 		tags: ['Waffles', 'Sweet Potato', 'Side'],
 		description: 'Savory waffles made with Sweet potato with a hint of Ginger',
-		image: './images/sweet-potato-waffle.jpg',
+		image: './images/sweet-potato-waffle-md.jpg',
 		recipeIngredient: [
 			'2 separated eggs',
 			'1/4 C Oil',
@@ -280,11 +280,95 @@ const recipes = [
 	}
 ]
 
-
 function randomArticle() {
     let articles = recipes.length;
     let chosenArticle = Math.floor(Math.random()*articles);
-    console.log(chosenArticle)
-    console.log(recipes[chosenArticle[1]])
+	let recipe = recipes[chosenArticle];
+
+	let displayArticle = recipeArticle(recipe);
+
+	renderArticle(displayArticle)
 }
+
+
+
+function recipeArticle(recipe) {
+	return `
+            <img src="${recipe.image}">
+
+            <div class="recipe-content">
+				<section class="tags">
+					${tagsTemplate(recipe.tags)}
+                </section>
+    
+                <p id="title">"${recipe.name}"</p>
+    
+                <span class="rating" role="img" aria-label="Rating: ${recipe.rating} out of 5 stars">
+					${ratingTemplate(recipe.rating)}
+                </span>
+    
+                <p id="description">"${recipe.description}"</p>
+            </div>`
+}
+
+
+
+function tagsTemplate(tags) {
+	let tagString = ``
+
+	for (let i = 0; i < tags.length; i++){
+		tagString += `<p>${tags[i]}</p> \n`
+	}
+
+	return tagString
+}
+
+function ratingTemplate(rating) {
+	let ratingString = ``
+
+	for (let i = 0; i < 5; i++) {
+		if (i < rating) {
+			ratingString += `<span aria-hidden="true" class="icon-star">⭐</span>\n`
+		} else {
+			ratingString += `<span aria-hidden="true" class="icon-star-empty">☆</span>\n`
+		}
+	}
+
+	return ratingString
+}
+
+
+function renderArticle(Article) {
+	var recipeContainer = document.getElementById('recipeContainer');
+	
+	recipeContainer.innerHTML = Article;
+}
+
+
+
+function searchRecipes(query) {
+    let filteredRecipes = recipes.filter(recipe =>
+        recipe.name.toLowerCase().includes(query.toLowerCase()) ||
+        recipe.description.toLowerCase().includes(query.toLowerCase())
+    );
+
+    if (filteredRecipes.length > 0) {
+        renderArticle(recipeArticle(filteredRecipes[0])); 
+    } else {
+        document.getElementById('recipeContainer').innerHTML = '<p>No recipes found</p>';
+    }
+}
+
+// Add event listener to the search bar
+	document.getElementById('search').addEventListener('input', function(event) {
+    searchRecipes(event.target.value);
+});
+
+
+
+
+
+
+
+
 randomArticle();
