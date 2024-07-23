@@ -6,6 +6,7 @@ img {
 }
 
 header {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 50px;
     display: flex;
     font-family: "Salsa", cursive;
@@ -14,7 +15,6 @@ header {
     justify-content: center;
     align-items: center;
     font-size: 5vw;
-    margin-bottom: 0px;
 }
 
 header img {
